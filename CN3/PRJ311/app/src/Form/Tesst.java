@@ -1,4 +1,8 @@
+package Form;
+
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Tesst {
     private JPanel panel1;
@@ -12,6 +16,21 @@ public class Tesst {
     private JButton hideButton;
 
 
+    public Tesst() {
+        exitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                btExitActionPerformed(e);
+            }
+        });
+        hideButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                btHideShowActionPerfromed(e);
+            }
+        });
+    }
+
     public static void main(String args[]) {
         JFrame frame = new JFrame("App");
         frame.setContentPane(new Tesst().panel1);
@@ -19,11 +38,11 @@ public class Tesst {
         frame.pack();
         frame.setVisible(true);
     }
-    private void btExitActionPerformed(java.awt.ActiveEvent evt) {
+    private void btExitActionPerformed(java.awt.event.ActionEvent evt) {
         System.exit(0);
     }
 
-    private void btHideShowActionPerfromed(java.awt.ActiveEvent evt) {
+    private void btHideShowActionPerfromed(java.awt.event.ActionEvent evt) {
         if (this.hideButton.getText().equalsIgnoreCase("hide")) {
             this.pEmp.setVisible(false);
             this.hideButton.setText("Show");
