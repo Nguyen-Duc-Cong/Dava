@@ -1,8 +1,8 @@
 public class Country {
-    private String id;
-    private String name;
-    private double area;
-    private String terrain;
+    protected String id;
+    protected String name;
+    protected double area;
+    protected String terrain;
 
     public Country() {
     }
